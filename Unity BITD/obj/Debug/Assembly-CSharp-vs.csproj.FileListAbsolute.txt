@@ -1,0 +1,12 @@
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\obj\Debug\Assembly-CSharp.dll
+C:\Users\Иван\Documents\GitHub\BearsInTheDark\BearsInTheDark\Unity BITD\obj\Debug\Assembly-CSharp.pdb
