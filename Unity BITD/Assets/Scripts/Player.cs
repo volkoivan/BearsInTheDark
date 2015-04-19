@@ -4,7 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public GameObject player;
 	public GameObject bump;
-    public GameObject arrow;
 	// Use this for initialization
 	void Start () {
 		//начальное направление игрока - ось OX!	
@@ -27,13 +26,8 @@ public class Player : MonoBehaviour {
 			var cloneBump = (GameObject) Instantiate (bump);
 			Vector3 bumpDir = mousePosition - player.transform.position;
 			cloneBump.transform.rotation = Quaternion.LookRotation (Vector3.forward, bumpDir);
-<<<<<<< HEAD
-            cloneBump.rigidbody2D.AddRelativeForce(new Vector2(0f, 50f));
-			}
-=======
 			cloneBump.rigidbody2D.AddRelativeForce (new Vector2 (0f, 500f));
 
 				}
->>>>>>> origin/master
 	}
 }

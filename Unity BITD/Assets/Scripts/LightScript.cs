@@ -11,8 +11,7 @@ public class LightScript : MonoBehaviour {
     private float lightCharge;
     public  bool isOn;
     public Light LightSource;
-    public Text LightLevelText;
-
+    private Text LightLevelText;
 	// Use this for initialization
 	void Start () {
         lightCharge = MaxCharge;
@@ -28,19 +27,21 @@ public class LightScript : MonoBehaviour {
         
         if (Input.GetMouseButtonDown(1)) isOn = !isOn;
 	    if (isOn) {
+	        lightCharge -= 8*Time.deltaTime;
 	        LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
             LightSource.intensity = lightCharge * MaxIntensity / MaxCharge;
 	       // lightCharge -= 7.5f*Time.deltaTime;
 	    }
 	    else {
 	        LightSource.intensity = 0;
-	        lightCharge += 5*Time.deltaTime/2;
+	        LightSource.spotAngle = 0;
+	        lightCharge += 10*Time.deltaTime;
 	    }
         if (lightCharge <= 0) isOn = false;
         if (lightCharge >= 100) lightCharge = 100;
 
         //отображение информации о заряде
 	    LightLevelText.text = "Battery level: " + Convert.ToInt32(lightCharge).ToString() + "%";
-
 	}
+
 }
