@@ -30,7 +30,7 @@ public class LightScript : MonoBehaviour {
 	    if (isOn) {
 	        LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
             LightSource.intensity = lightCharge * MaxIntensity / MaxCharge;
-	        lightCharge -= 7.5f*Time.deltaTime;
+	       // lightCharge -= 7.5f*Time.deltaTime;
 	    }
 	    else {
 	        LightSource.intensity = 0;

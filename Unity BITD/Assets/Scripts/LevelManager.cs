@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour {
         FearLevel = 0;
         Money = 0;
         TimerLevel = 0f;
+<<<<<<< HEAD
         TimerBear = 5f;
         foreach (var obj in GameObject.FindGameObjectsWithTag("UI")) {
             if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
@@ -36,6 +37,22 @@ public class LevelManager : MonoBehaviour {
         if (TimerBear < 0f) {
             Instantiate(BearGameObject);
             TimerBear = 5f;
+=======
+	    TimerBear = 0f;
+	    foreach (var obj in GameObject.FindGameObjectsWithTag("UI")) {
+            if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
+	    }
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+	    TimerLevel += Time.deltaTime;
+	    TimerBear -= Time.deltaTime;
+	    if (TimerBear < 0f) {
+	        Instantiate(BearGameObject);
+	        TimerBear = 5f;
+>>>>>>> origin/master
         }
         string minutes = (Convert.ToInt32(TimerLevel)/60).ToString();
         string seconds = (Convert.ToInt32(TimerLevel)%60).ToString();

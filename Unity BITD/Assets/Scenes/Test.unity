@@ -257,7 +257,11 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
     m_FontSize: 35
+=======
+    m_FontSize: 30
+>>>>>>> origin/master
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -641,6 +645,7 @@ GameObject:
   - 4: {fileID: 682742100}
   - 212: {fileID: 682742099}
   - 114: {fileID: 682742098}
+  - 61: {fileID: 682742101}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -698,6 +703,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!61 &682742101
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6198232, guid: 8f1c06773bdbf9d42b10ee52ba7049ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1737809954}
+  m_GameObject: {fileID: 682742097}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1337683775
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +766,11 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
     m_FontSize: 23
+=======
+    m_FontSize: 13
+>>>>>>> origin/master
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -997,10 +1018,20 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     m_RemovedComponents:
     - {fileID: 11415980, guid: bbc4306bb76a03b41b494fffa48e30b1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bbc4306bb76a03b41b494fffa48e30b1, type: 2}
   m_RootGameObject: {fileID: 662244613}
+=======
+    - target: {fileID: 11440890, guid: f6a3a02e932c4ed4ebcd758d9c78b842, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f6a3a02e932c4ed4ebcd758d9c78b842, type: 2}
+  m_RootGameObject: {fileID: 2023452302}
+>>>>>>> origin/master
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &1931084279
