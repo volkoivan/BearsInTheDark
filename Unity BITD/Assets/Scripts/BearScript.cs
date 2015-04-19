@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class BearScript : MonoBehaviour {
-    private const float BearSpeed = 50f;
+	private bool isHit = false;
+    private const float BearSpeed = 100f;
     // Use this for initialization
     private void Start() {
         InstantiateAtBorder();
@@ -33,9 +35,18 @@ public class BearScript : MonoBehaviour {
     }
 
 
-    void OnCollisionEnter2D(Collision2D col) {
+	void OnTriggerEnter2D(Collider2D col) {
+		Debug.Log("Yes!");
         if (col.gameObject.tag == "Player") {
+			Debug.Log ("???");
             //Application.LoadLevel("Test");
         }
+		if ((col.gameObject.tag == "Bump") && (!isHit)) {
+			Debug.Log ("!!!");
+			rigidbody2D.AddRelativeForce(new Vector2 (0, -3*BearSpeed));
+			transform.Rotate(0,0,transform.eulerAngles.x+180);
+			isHit = true;
+			Destroy(col.gameObject);
+		}
     }
 }

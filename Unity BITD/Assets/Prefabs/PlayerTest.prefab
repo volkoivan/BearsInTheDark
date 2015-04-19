@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 465990}
   - 212: {fileID: 21265990}
   - 114: {fileID: 11465990}
+  - 61: {fileID: 6198232}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -29,6 +30,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6198232
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165990}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11465990
 MonoBehaviour:
   m_ObjectHideFlags: 1

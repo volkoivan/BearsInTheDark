@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 441604}
   - 212: {fileID: 21241604}
   - 50: {fileID: 5080762}
+  - 61: {fileID: 6125534}
   m_Layer: 0
   m_Name: BumpTest
-  m_TagString: Untagged
+  m_TagString: Bump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +45,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &6125534
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141604}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!212 &21241604
 SpriteRenderer:
   m_ObjectHideFlags: 1

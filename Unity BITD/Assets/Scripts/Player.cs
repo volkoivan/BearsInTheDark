@@ -23,10 +23,8 @@ public class Player : MonoBehaviour {
 			var cloneBump = (GameObject)Instantiate (bump);
 			Vector3 bumpDir = mousePosition - player.transform.position;
 			cloneBump.transform.rotation = Quaternion.LookRotation (Vector3.forward, bumpDir);
-			cloneBump.rigidbody2D.AddRelativeForce (new Vector2 (0f, 50f));
+			cloneBump.rigidbody2D.AddRelativeForce (new Vector2 (0f, 500f));
+
 				}
 	}
-
-
-
 }
