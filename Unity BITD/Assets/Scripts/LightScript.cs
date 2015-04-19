@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class LightScript : MonoBehaviour {
@@ -8,40 +7,40 @@ public class LightScript : MonoBehaviour {
     private const int MaxAngle = 100;
     private const int MaxCharge = 100;
 
-    private float lightCharge;
-    public  bool isOn;
+    public static GameObject LightLevelText;
     public Light LightSource;
-    private Text LightLevelText;
-	// Use this for initialization
-	void Start () {
+    public bool isOn;
+    private float lightCharge;
+    // Use this for initialization
+    private void Start() {
         lightCharge = MaxCharge;
-	    isOn = true;
-	    foreach (var obj in GameObject.FindGameObjectsWithTag("UI")) {
-	        if (obj.name == "LightLevel") LightLevelText = obj.GetComponent<Text>();
-	    }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    //управления яркостью фонарика
-        
-        if (Input.GetMouseButtonDown(1)) isOn = !isOn;
-	    if (isOn) {
-	        lightCharge -= 8*Time.deltaTime;
-	        LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
-            LightSource.intensity = lightCharge * MaxIntensity / MaxCharge;
-	       // lightCharge -= 7.5f*Time.deltaTime;
-	    }
-	    else {
-	        LightSource.intensity = 0;
-	        LightSource.spotAngle = 0;
-	        lightCharge += 10*Time.deltaTime;
-	    }
-        if (lightCharge <= 0) isOn = false;
-        if (lightCharge >= 100) lightCharge = 100;
+        isOn = true;
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI")) {
+            if (obj.name == "LightLevel") LightLevelText = obj;
+        }
+    }
 
-        //отображение информации о заряде
-	    LightLevelText.text = "Battery level: " + Convert.ToInt32(lightCharge).ToString() + "%";
-	}
+    // Update is called once per frame
+    private void Update() {
+        //управления яркостью фонарика
+        if (!LevelManager.isGameOver) {
+            if (Input.GetMouseButtonDown(1)) isOn = !isOn;
+            if (isOn) {
+                lightCharge -= 8*Time.deltaTime;
+                LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
+                LightSource.intensity = lightCharge*MaxIntensity/MaxCharge;
+                // lightCharge -= 7.5f*Time.deltaTime;
+            }
+            else {
+                LightSource.intensity = 0;
+                LightSource.spotAngle = 0;
+                lightCharge += 10*Time.deltaTime;
+            }
+            if (lightCharge <= 0) isOn = false;
+            if (lightCharge >= 100) lightCharge = 100;
 
+            //отображение информации о заряде
+            LightLevelText.GetComponent<Text>().text = "Battery level: " + Convert.ToInt32(lightCharge) + "%";
+        }
+    }
 }

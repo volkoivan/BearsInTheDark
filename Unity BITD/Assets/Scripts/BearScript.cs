@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using System.Collections;
 
 public class BearScript : MonoBehaviour {
@@ -12,6 +13,7 @@ public class BearScript : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
+        if (LevelManager.isGameOver) rigidbody2D.velocity = new Vector2(0,0);
     }
 
     private void InstantiateAtBorder() {
@@ -39,7 +41,8 @@ public class BearScript : MonoBehaviour {
 		Debug.Log("Yes!");
         if (col.gameObject.tag == "Player") {
 			Debug.Log ("???");
-            //Application.LoadLevel("Test");
+            LevelManager.isGameOver = true;
+            
         }
 		if ((col.gameObject.tag == "Bump") && (!isHit)) {
 			Debug.Log ("!!!");
