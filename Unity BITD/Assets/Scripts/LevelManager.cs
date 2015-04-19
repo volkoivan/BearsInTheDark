@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
 
     public static float FearLevel;
-    public static float LightCharge;
     public int Money;
     public static float TimerLevel;
     public float TimerBear;
@@ -16,7 +15,6 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	    FearLevel = 0;
-	    LightCharge = 100;
 	    Money = 0;
         TimerLevel = 0f;
 	    TimerBear = 5f;
