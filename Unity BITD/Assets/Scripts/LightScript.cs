@@ -9,7 +9,7 @@ public class LightScript : MonoBehaviour {
     private const int MaxCharge = 100;
 
     private float lightCharge;
-    private bool isOn;
+    public  bool isOn;
     public Light LightSource;
     public Text LightLevelText;
 
