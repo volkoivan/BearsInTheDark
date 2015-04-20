@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour {
@@ -105,11 +106,11 @@ public class LevelManager : MonoBehaviour {
                 if (!isGameOverCreated) {
                     
                     Instantiate(gameOverObject);
-                    isGameOverCreated = true;
+					isGameOverCreated = true;
                     isGameOver = true;
                     BackgroundMusic.audio.volume = 0.5f;
                     Instantiate(MusicToPlay[2]);
-                }
+			}
             
         }
     }
@@ -122,4 +123,4 @@ public class LevelManager : MonoBehaviour {
         GetComponent<Animator>().Play("CameraAnim");
         isGameStarted = true;
     }
-}
+	}
