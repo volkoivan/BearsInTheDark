@@ -11,11 +11,7 @@ public class Player : MonoBehaviour {
     private bool isFacingRightForBump = true;
     private bool isRightRotatingAnimationShown = false;
     private bool isLeftRotatingAnimationShown = false;
-<<<<<<< HEAD
-
-=======
 	private float isBumpThrown = 0;
->>>>>>> origin/master
     // Use this for initialization
     private void Start() {
         //начальное направление игрока - ось OX!	

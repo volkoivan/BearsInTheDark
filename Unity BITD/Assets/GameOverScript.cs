@@ -11,8 +11,8 @@ public class GameOverScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        LightScript.LightLevelText.GetComponent<Animator>().Play("UILightLevelFade");
-        LevelManager.FearLevelText.GetComponent<Animator>().Play("UILightLevelFade");
+        //LightScript.LightLevelText.GetComponent<Animator>().Play("UILightLevelFade");
+        //LevelManager.FearLevelText.GetComponent<Animator>().Play("UILightLevelFade");
         LevelManager.LevelTimerText.GetComponent<Animator>().Play("UIGameOverTime");
         Instantiate(GameOverScreen);
         timer = 2f;

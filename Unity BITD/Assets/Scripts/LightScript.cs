@@ -47,7 +47,7 @@ public class LightScript : MonoBehaviour {
             if (lightCharge >= 100) lightCharge = 100;
 
             //отображение информации о заряде
-            LightLevelText.GetComponent<Text>().text = "Battery level: " + Convert.ToInt32(lightCharge) + "%";
+           // LightLevelText.GetComponent<Text>().text = "Battery level: " + Convert.ToInt32(lightCharge) + "%";
         }
     }
 

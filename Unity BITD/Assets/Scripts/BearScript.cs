@@ -11,7 +11,7 @@ public class BearScript : MonoBehaviour {
     public GameObject[] BearSounds;
     // Use this for initialization
     private void Start() {
-        Instantiate(BearSounds[0]);
+        Instantiate(BearSounds[Random.Range(4,7)]);
         InstantiateAtBorder();
         MoveToThePlayer();
     }
@@ -59,7 +59,7 @@ public class BearScript : MonoBehaviour {
         }
         if ((col.gameObject.tag == "Bump") && (!isHit))
         {
-            var soundClone = (GameObject)Instantiate(BearSounds[Random.Range(1,5)]);
+            var soundClone = (GameObject)Instantiate(BearSounds[Random.Range(0,4)]);
             Destroy(soundClone,3f);
             Debug.Log("!!!");
             transform.rotation = RotationFacingPlayer;
