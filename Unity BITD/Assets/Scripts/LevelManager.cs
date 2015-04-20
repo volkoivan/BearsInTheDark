@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject BearGameObject;
     public static Text FearLevelText;
     public static Text LevelTimerText;
+    public static Text HighscoreText;
     public int Money;
     public float TimerBear;
     private GameObject cameraGameObject;
@@ -19,27 +20,39 @@ public class LevelManager : MonoBehaviour {
     private float newx, newy;
     private float timerToShake;
     public static bool isGameOver = false;
+    public static bool isGameStarted = false;
     public GameObject gameOverObject;
-    private bool isGameOverCreated=false;
+    public bool isGameOverCreated = false;
+    public GameObject[] MusicToPlay;
+    public GameObject BackgroundMusic;
+    public GameObject MenuMusic;
+    public GameObject cloneMenuMusic;
+
     // Use this for initialization
-    private void Start()
-    {
+    private void Start() {
+        //HighscoreText.text = .ToString();
+        isGameOver = false;
+        isGameStarted = false;
+        isGameOverCreated = false;
+        cloneMenuMusic = (GameObject) Instantiate(MenuMusic);
         FearLevel = 0;
         Money = 0;
         TimerLevel = 0f;
-        TimerBear = 0f;
+        TimerBear = 5f;
         timerToShake = 0f;
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI")) {
-            if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
-            if (obj.name == "FearLevel") FearLevelText = obj.GetComponent<Text>();
-        }
         cameraGameObject = GameObject.FindGameObjectWithTag("MainCamera");
         cameraStartingPosition = cameraGameObject.transform.position;
     }
 
     // Update is called once per frame
     private void Update() {
-        if (!isGameOver) {
+        if (isGameStarted && !isGameOver)
+        {
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI")) {
+                if (obj.name == "Highscore") HighscoreText = obj.GetComponent<Text>();
+                if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
+                if (obj.name == "FearLevel") FearLevelText = obj.GetComponent<Text>();
+            }
             TimerLevel += Time.deltaTime;
             TimerBear -= Time.deltaTime;
             timerToShake += Time.deltaTime;
@@ -47,7 +60,7 @@ public class LevelManager : MonoBehaviour {
 
             if (TimerBear < 0f) {
                 Instantiate(BearGameObject);
-                TimerBear = Random.Range(5, 10)/((15 + Convert.ToInt32(TimerLevel))/15);
+                TimerBear = Random.Range(5f, 10f)/((15 + Convert.ToInt32(TimerLevel))/15);
             }
 
             string minutes = (Convert.ToInt32(TimerLevel)/60).ToString();
@@ -88,12 +101,25 @@ public class LevelManager : MonoBehaviour {
 
         //Вызов геймовера
             if (isGameOver) {
+                if (Input.GetMouseButtonDown(0)) Application.LoadLevel("Test");
                 if (!isGameOverCreated) {
+                    
                     Instantiate(gameOverObject);
                     isGameOverCreated = true;
                     isGameOver = true;
+                    BackgroundMusic.audio.volume = 0.5f;
+                    Instantiate(MusicToPlay[2]);
                 }
             
         }
+    }
+
+    public void StartGame() {
+        Destroy(cloneMenuMusic);
+        BackgroundMusic = (GameObject) Instantiate(MusicToPlay[Random.Range(0, 2)]);
+        GameObject.FindGameObjectWithTag("Light").GetComponent<Light>().range = 16;
+        GameObject.FindGameObjectWithTag("Light").GetComponent<Light>().spotAngle = 100;
+        GetComponent<Animator>().Play("CameraAnim");
+        isGameStarted = true;
     }
 }

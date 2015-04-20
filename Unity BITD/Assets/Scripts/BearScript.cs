@@ -8,8 +8,10 @@ public class BearScript : MonoBehaviour {
 	private bool isHit = false;
     private const float BearSpeed = 100f;
     private Quaternion RotationFacingPlayer;
+    public AudioClip[] BearSounds;
     // Use this for initialization
     private void Start() {
+        AudioSource.PlayClipAtPoint(BearSounds[0],transform.position);
         InstantiateAtBorder();
         MoveToThePlayer();
     }
@@ -34,7 +36,6 @@ public class BearScript : MonoBehaviour {
 
 
     private void MoveToThePlayer() {
-
         Vector3 targetDir = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, targetDir);
         RotationFacingPlayer = transform.rotation;
@@ -55,9 +56,10 @@ public class BearScript : MonoBehaviour {
         if (col.gameObject.tag == "Player") {
 			Debug.Log ("???");
             LevelManager.isGameOver = true;
-            
         }
-		if ((col.gameObject.tag == "Bump") && (!isHit)) {
+        if ((col.gameObject.tag == "Bump") && (!isHit))
+        {
+            AudioSource.PlayClipAtPoint(BearSounds[Random.Range(1,5)], transform.position);
             Debug.Log("!!!");
             transform.rotation = RotationFacingPlayer;
 			rigidbody2D.AddRelativeForce(new Vector2 (0, -3*BearSpeed));

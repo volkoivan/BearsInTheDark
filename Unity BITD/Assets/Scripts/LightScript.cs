@@ -15,21 +15,22 @@ public class LightScript : MonoBehaviour {
     private void Start() {
         lightCharge = MaxCharge;
         isOn = true;
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI")) {
-            if (obj.name == "LightLevel") LightLevelText = obj;
-        }
     }
 
     // Update is called once per frame
     private void Update() {
         //управления яркостью фонарика
-        if (!LevelManager.isGameOver) {
+        if (!LevelManager.isGameOver && LevelManager.isGameStarted)
+        {
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI"))
+            {
+                if (obj.name == "LightLevel") LightLevelText = obj;
+            }
             if (Input.GetMouseButtonDown(1)) isOn = !isOn;
             if (isOn) {
                 lightCharge -= 8*Time.deltaTime;
                 LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
                 LightSource.intensity = lightCharge*MaxIntensity/MaxCharge;
-                // lightCharge -= 7.5f*Time.deltaTime;
             }
             else {
                 LightSource.intensity = 0;
@@ -42,5 +43,10 @@ public class LightScript : MonoBehaviour {
             //отображение информации о заряде
             LightLevelText.GetComponent<Text>().text = "Battery level: " + Convert.ToInt32(lightCharge) + "%";
         }
+    }
+
+    public void PlayAnimation() {
+        GetComponent<Animator>().Play("LightAnim");
+
     }
 }

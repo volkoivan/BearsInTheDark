@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     private bool isFacingRightForBump = true;
     private bool isRightRotatingAnimationShown = false;
     private bool isLeftRotatingAnimationShown = false;
+	private float isBumpThrown = 0;
     // Use this for initialization
     private void Start() {
         //начальное направление игрока - ось OX!	
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     private void Update() {
         //движение игрока за мышкой
-        if (!LevelManager.isGameOver) {
+        if (!LevelManager.isGameOver && LevelManager.isGameStarted) {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (mousePosition.x >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2f, 0, 0)).x) {
                 isLeftRotatingAnimationShown = false;
@@ -40,12 +41,17 @@ public class Player : MonoBehaviour {
             //создание шишки по нажатию на левую кнопку мыши
 
 
-            if (Input.GetMouseButtonDown(0)) {
+			if ((Input.GetMouseButtonDown(0)) && (isBumpThrown<=0f)) {
                 isFacingRightForBump = isFacingRight;
                 mousePositionForBump = mousePosition;
                 gameObject.GetComponent<Animator>().Play("PlayerThrow");
                 Invoke("InstBump", 0.3f);
-            }
+				isBumpThrown = 1f;
+			}
+			if (isBumpThrown > 0f)
+			{
+				isBumpThrown -= Time.deltaTime;
+			}
         }
     }
 
