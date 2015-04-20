@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     public GameObject bump;
+    public GameObject bumpSound;
     public GameObject player;
     private Vector3 mousePosition;
     private Vector3 mousePositionForBump;
@@ -55,13 +56,17 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void InstBump() {
+    void InstBump()
+    {
+        var cloneSound = (GameObject)Instantiate(bumpSound);
+        Destroy(cloneSound, 2f);
         var cloneBump = (GameObject)Instantiate(bump);
         if (isFacingRightForBump) cloneBump.transform.position = transform.position + transform.right / 2;
         else cloneBump.transform.position = transform.position - transform.right / 2;
         Vector3 bumpDir = mousePositionForBump - player.transform.position;
         cloneBump.transform.rotation = Quaternion.LookRotation(Vector3.forward, bumpDir);
-        cloneBump.rigidbody2D.AddRelativeForce(new Vector2(0f, 500f));
+        cloneBump.rigidbody2D.AddRelativeForce(new Vector2(0f, 400f));
+        Destroy(cloneBump,5f);
     }
 
     private void RotateSpriteLeft() {
