@@ -1,10 +1,13 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class BearScript : MonoBehaviour {
 	private bool isHit = false;
     private const float BearSpeed = 100f;
+    private Quaternion RotationFacingPlayer;
     // Use this for initialization
     private void Start() {
         InstantiateAtBorder();
@@ -31,9 +34,19 @@ public class BearScript : MonoBehaviour {
 
 
     private void MoveToThePlayer() {
+
         Vector3 targetDir = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, targetDir);
+        RotationFacingPlayer = transform.rotation;
         rigidbody2D.AddRelativeForce(new Vector2(0, BearSpeed));
+        transform.localEulerAngles= new Vector3(0,0,0);
+        if (transform.position.x >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2f, 0, 0)).x) {
+            transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        if (transform.position.x < Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0, 0)).x)
+        {
+            transform.localScale = new Vector3(-Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
     }
 
 
@@ -45,9 +58,12 @@ public class BearScript : MonoBehaviour {
             
         }
 		if ((col.gameObject.tag == "Bump") && (!isHit)) {
-			Debug.Log ("!!!");
+            Debug.Log("!!!");
+            transform.rotation = RotationFacingPlayer;
 			rigidbody2D.AddRelativeForce(new Vector2 (0, -3*BearSpeed));
-			transform.Rotate(0,0,transform.eulerAngles.x+180);
+		    gameObject.GetComponent<Animator>().speed = 3;
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 			isHit = true;
 			Destroy(col.gameObject);
 		}

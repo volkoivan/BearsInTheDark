@@ -53,9 +53,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 96
-        height: 216
+        height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Player throwing_1
       rect:
@@ -65,7 +65,7 @@ TextureImporter:
         width: 104
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Player throwing_2
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 112
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Player throwing_3
       rect:
@@ -85,7 +85,7 @@ TextureImporter:
         width: 80
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

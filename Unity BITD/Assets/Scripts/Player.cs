@@ -15,8 +15,8 @@ public class Player : MonoBehaviour {
         //движение игрока за мышкой
         if (!LevelManager.isGameOver) {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (mousePosition.x >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0)).x) transform.localScale = new Vector3(-Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            if (mousePosition.x < Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2,0,0)).x) transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (mousePosition.x >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0, 0)).x) transform.localScale = new Vector3(-Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (mousePosition.x < Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2f,0,0)).x) transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             //float angle = Vector2.Angle(Vector2.right, mousePosition - transform.position);
             //transform.eulerAngles = new Vector3(0f, 0f, transform.position.y < mousePosition.y ? angle : -angle);
 

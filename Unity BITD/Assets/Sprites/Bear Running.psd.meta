@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: f05690d57e7cce640807597c48192090
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bear Running_0
+    21300002: Bear Running_1
+    21300004: Bear Running_2
+    21300006: Bear Running_3
+    21300008: Bear Running_4
+    21300010: Bear Running_5
+    21300012: Bear Running_6
+    21300014: Bear Running_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bear Running_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 4
+        width: 82
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 4
+        width: 92
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 4
+        width: 102
+        height: 134
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 4
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_4
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 4
+        width: 84
+        height: 120
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 4
+        width: 84
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_6
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 4
+        width: 84
+        height: 134
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bear Running_7
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 4
+        width: 92
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
