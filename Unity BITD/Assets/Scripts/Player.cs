@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+
     public GameObject bump;
     public GameObject bumpSound;
     public GameObject player;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour {
     private bool isRightRotatingAnimationShown = false;
     private bool isLeftRotatingAnimationShown = false;
 	private float isBumpThrown = 0;
+
     // Use this for initialization
     private void Start() {
         //начальное направление игрока - ось OX!	
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour {
                 Invoke("RotateSpriteLeft", 0.05f);
                 isFacingRight = false;
             }
+
             //float angle = Vector2.Angle(Vector2.right, mousePosition - transform.position);
             //transform.eulerAngles = new Vector3(0f, 0f, transform.position.y < mousePosition.y ? angle : -angle);
 
@@ -47,7 +50,7 @@ public class Player : MonoBehaviour {
                 mousePositionForBump = mousePosition;
                 gameObject.GetComponent<Animator>().Play("PlayerThrow");
                 Invoke("InstBump", 0.3f);
-				isBumpThrown = 1f;
+				isBumpThrown = 0.8f;
 			}
 			if (isBumpThrown > 0f)
 			{

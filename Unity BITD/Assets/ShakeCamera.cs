@@ -34,21 +34,18 @@ public class ShakeCamera : MonoBehaviour
             //Управление страхом
             else
             {
-                FearLevel += Time.deltaTime * 10f;
+                FearLevel += Time.deltaTime * 10f*Mathf.Log10(LevelManager.TimerLevel);
             }
             if (FearLevel >= MaxFear) FearLevel = MaxFear;
             if (FearLevel <= 0) FearLevel = 0;
             //FearLevelText.text = "Fear level: " + Convert.ToInt32(FearLevel) + "%";
-            if (timerToShake > 1 / (FearLevel + 0.1f))
+            if (timerToShake > 0.2f / (FearLevel + 0.1f))
             {
                 timerToShake = 0f;
-                newx = cameraStartingPosition.x + FearLevel / 1000 * Random.Range(FearLevel / -2f, FearLevel / 2f);
-                newy = cameraStartingPosition.y + FearLevel / 1000 * Random.Range(FearLevel / -2f, FearLevel / 2f);
-                journeyLength = Vector3.Distance(transform.position, new Vector3(newx, newy, cameraStartingPosition.z));
+                newx = cameraStartingPosition.x + Random.Range(-FearLevel / 100f, FearLevel / 100f);
+                newy = cameraStartingPosition.y + Random.Range(-FearLevel / 100f, FearLevel / 100f);
+                transform.position = new Vector3(newx, newy, 0);
             }
-            float distCovered = (Time.deltaTime) * (journeyLength / 0.05f);
-            float fracJourney = distCovered / journeyLength;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(newx, newy, cameraStartingPosition.z), fracJourney);
             NoiseObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, FearLevel / 200);
 	        NoiseSound.GetComponent<AudioSource>().volume = FearLevel/100f;
 	    }

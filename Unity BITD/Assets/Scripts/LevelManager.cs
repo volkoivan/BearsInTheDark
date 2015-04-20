@@ -74,8 +74,9 @@ public class LevelManager : MonoBehaviour {
 
             if (TimerBear < 0f) {
                 Instantiate(BearGameObject);
-                TimerBear = Random.Range(5f, 10f)/((15 + Convert.ToInt32(TimerLevel))/15);
+                TimerBear = Random.Range(5f, 10f)/(Mathf.Log(TimerLevel,4));
             }
+
 
             string minutes = (Convert.ToInt32(TimerLevel)/60).ToString();
             string seconds = (Convert.ToInt32(TimerLevel)%60).ToString();
@@ -92,31 +93,21 @@ public class LevelManager : MonoBehaviour {
         }
 
         //Вызов геймовера
-<<<<<<< HEAD
-            if (isGameOver) {
-                if (Input.GetMouseButtonDown(0)) Application.LoadLevel("Test");
-                if (!isGameOverCreated) {
-                    
-                    Instantiate(gameOverObject);
-					isGameOverCreated = true;
-                    isGameOver = true;
-                    BackgroundMusic.audio.volume = 0.5f;
-                    Instantiate(MusicToPlay[2]);
-			}
-            
-=======
-        if (isGameOver) {
+
+        if (isGameOver)
+        {
             if (timerToRestart < 0f) {
                 if (Input.GetMouseButtonDown(0)) {
                     isRestart = true;
-                    Application.LoadLevel("Test");
+                    Application.LoadLevel("MainScene");
                 }
                 if (Input.GetMouseButtonDown(1)) {
                     isRestart = false;
-                    Application.LoadLevel("Test");
+                    Application.LoadLevel("MainScene");
                 }
             }
-            if (!isGameOverCreated) {
+            if (!isGameOverCreated)
+            {
                 timerToRestart = 2f;
                 Instantiate(gameOverObject);
                 isGameOverCreated = true;
@@ -124,7 +115,6 @@ public class LevelManager : MonoBehaviour {
                 BackgroundMusic.audio.volume = 0.5f;
                 Instantiate(MusicToPlay[2]);
             }
->>>>>>> ea5f4569404a2050892d1b4e2f0f34c4edc1e3e0
         }
     }
 
