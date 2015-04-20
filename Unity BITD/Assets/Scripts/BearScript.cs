@@ -59,7 +59,7 @@ public class BearScript : MonoBehaviour {
         }
         if ((col.gameObject.tag == "Bump") && (!isHit))
         {
-            AudioSource.PlayClipAtPoint(BearSounds[Random.Range(1,4)], transform.position);
+            AudioSource.PlayClipAtPoint(BearSounds[Random.Range(1,5)], transform.position);
             Debug.Log("!!!");
             transform.rotation = RotationFacingPlayer;
 			rigidbody2D.AddRelativeForce(new Vector2 (0, -3*BearSpeed));

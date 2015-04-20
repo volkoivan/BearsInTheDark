@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     private void Update() {
         //движение игрока за мышкой
-        if (!LevelManager.isGameOver) {
+        if (!LevelManager.isGameOver && LevelManager.isGameStarted) {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (mousePosition.x >= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2f, 0, 0)).x) {
                 isLeftRotatingAnimationShown = false;
