@@ -24,13 +24,16 @@ public class LevelManager : MonoBehaviour {
     public GameObject gameOverObject;
     public bool isGameOverCreated = false;
     public GameObject[] MusicToPlay;
-    public GameObject BackgroundMusic;
+    private GameObject BackgroundMusic;
     public GameObject MenuMusic;
-    public GameObject cloneMenuMusic;
+    private GameObject cloneMenuMusic;
+    public GameObject GamePlayCanvas;
+    public GameObject MenuCanvas;
+    private static bool isRestart = false;
 
     // Use this for initialization
-    private void Start() {
-        //HighscoreText.text = .ToString();
+    private void Start()
+    {
         isGameOver = false;
         isGameStarted = false;
         isGameOverCreated = false;
@@ -42,17 +45,44 @@ public class LevelManager : MonoBehaviour {
         timerToShake = 0f;
         cameraGameObject = GameObject.FindGameObjectWithTag("MainCamera");
         cameraStartingPosition = cameraGameObject.transform.position;
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI"))
+        {
+            if (obj.name == "Highscore") HighscoreText = obj.GetComponent<Text>();
+        }
+
+        string minutes = (Convert.ToInt32(PlayerPrefs.GetFloat("Best time")) / 60).ToString();
+        string seconds = (Convert.ToInt32(PlayerPrefs.GetFloat("Best time")) % 60).ToString();
+        if (Convert.ToInt32(minutes) < 10)
+            HighscoreText.text = "Best time: 0" + minutes + ":";
+        else
+            HighscoreText.text = "Best time: " + minutes + ":";
+        if (Convert.ToInt32(seconds) < 10)
+            HighscoreText.text += "0" + seconds;
+        else
+            HighscoreText.text += seconds;
+        if (isRestart) {
+            foreach (var obj in GameObject.FindGameObjectsWithTag("UI")) {
+                GamePlayCanvas.SetActive(true);
+                MenuCanvas.SetActive(false);
+            }
+            StartGame();
+            GameObject.FindGameObjectWithTag("Light").GetComponent<LightScript>().PlayAnimation();
+
+        }
     }
 
     // Update is called once per frame
-    private void Update() {
+    private void Update()
+    {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI"))
+        {
+            if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
+            if (obj.name == "FearLevel") FearLevelText = obj.GetComponent<Text>();
+        }
+
         if (isGameStarted && !isGameOver)
         {
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("UI")) {
-                if (obj.name == "Highscore") HighscoreText = obj.GetComponent<Text>();
-                if (obj.name == "Level Timer") LevelTimerText = obj.GetComponent<Text>();
-                if (obj.name == "FearLevel") FearLevelText = obj.GetComponent<Text>();
-            }
             TimerLevel += Time.deltaTime;
             TimerBear -= Time.deltaTime;
             timerToShake += Time.deltaTime;
@@ -63,8 +93,8 @@ public class LevelManager : MonoBehaviour {
                 TimerBear = Random.Range(5f, 10f)/((15 + Convert.ToInt32(TimerLevel))/15);
             }
 
-            string minutes = (Convert.ToInt32(TimerLevel)/60).ToString();
-            string seconds = (Convert.ToInt32(TimerLevel)%60).ToString();
+            string minutes = (Convert.ToInt32(TimerLevel) / 60).ToString();
+            string seconds = (Convert.ToInt32(TimerLevel) % 60).ToString();
             if (Convert.ToInt32(minutes) < 10)
                 LevelTimerText.text = "0" + minutes + ":";
             else
@@ -100,8 +130,17 @@ public class LevelManager : MonoBehaviour {
         }
 
         //Вызов геймовера
-            if (isGameOver) {
-                if (Input.GetMouseButtonDown(0)) Application.LoadLevel("Test");
+        if (isGameOver)
+        {
+            if (Input.GetMouseButtonDown(0)) {
+                isRestart = true;
+                Application.LoadLevel("Test");
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                isRestart = false;
+                Application.LoadLevel("Test");
+            }
                 if (!isGameOverCreated) {
                     
                     Instantiate(gameOverObject);

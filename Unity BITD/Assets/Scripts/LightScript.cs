@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class LightScript : MonoBehaviour {
     private const int MaxIntensity = 8;
     private const int MaxAngle = 100;
     private const int MaxCharge = 100;
+    public GameObject FlashlightSound;
 
     public static GameObject LightLevelText;
     public Light LightSource;
@@ -26,7 +28,11 @@ public class LightScript : MonoBehaviour {
             {
                 if (obj.name == "LightLevel") LightLevelText = obj;
             }
-            if (Input.GetMouseButtonDown(1)) isOn = !isOn;
+            if (Input.GetMouseButtonDown(1)) {
+                var cloneSound = (GameObject) Instantiate(FlashlightSound);
+                Destroy(cloneSound,1f);
+                isOn = !isOn;
+            }
             if (isOn) {
                 lightCharge -= 8*Time.deltaTime;
                 LightSource.spotAngle = lightCharge*MaxAngle/MaxCharge;
