@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5095812}
   - 114: {fileID: 11495812}
   - 95: {fileID: 9538312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.876539648, y: -.829159081, z: 19}
+  m_LocalPosition: {x: -5.20896959, y: 2.48199439, z: 19}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 216336891
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f05690d57e7cce640807597c48192090, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

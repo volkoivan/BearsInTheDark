@@ -16,9 +16,9 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
-  User Layer 10: 
+  User Layer 8: Player
+  User Layer 9: Enemy
+  User Layer 10: Bump
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
@@ -44,4 +44,20 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Player
+    userID: 1
+    uniqueID: 2504007201
+    locked: 0
+  - name: Enemy
+    userID: 2
+    uniqueID: 216336891
+    locked: 0
+  - name: Bump
+    userID: 3
+    uniqueID: 1118797309
+    locked: 0
+  - name: Bush
+    userID: 4
+    uniqueID: 1404377721
     locked: 0

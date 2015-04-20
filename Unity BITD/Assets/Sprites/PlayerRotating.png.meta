@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 2c550997f44eb8a4fba10393c66d40bc
+guid: 9316734d4db069e48a9694e17a7d6c0b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BearRotating_0
-    21300002: BearRotating_1
-    21300004: BearRotating_2
-    21300006: BearRotating_3
+    21300000: PlayerRotating_0
+    21300002: PlayerRotating_1
+    21300004: PlayerRotating_2
+    21300006: PlayerRotating_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,43 +47,43 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: BearRotating_0
+    - name: PlayerRotating_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 118
+        x: 24
+        y: 8
+        width: 44
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BearRotating_1
+    - name: PlayerRotating_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 0
-        width: 52
-        height: 118
+        x: 108
+        y: 8
+        width: 32
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerRotating_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 8
+        width: 32
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BearRotating_2
+    - name: PlayerRotating_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 66
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BearRotating_3
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 0
-        width: 46
-        height: 118
+        x: 216
+        y: 8
+        width: 44
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -61,6 +61,7 @@ public class BearScript : MonoBehaviour {
             Debug.Log("!!!");
             transform.rotation = RotationFacingPlayer;
 			rigidbody2D.AddRelativeForce(new Vector2 (0, -3*BearSpeed));
+		    gameObject.GetComponent<Animator>().Play("BearRotatingAnimation");
 		    gameObject.GetComponent<Animator>().speed = 3;
             transform.localEulerAngles = new Vector3(0, 0, 0);
 			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
