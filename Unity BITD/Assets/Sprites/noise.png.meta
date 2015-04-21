@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 6c2a57d7a6bc4454ebe79389c8110141
+timeCreated: 1429589118
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: noise_0
@@ -23,6 +25,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
@@ -33,6 +38,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -51,30 +57,32 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1602
-        height: 1200
+        width: 800
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: noise_1
       rect:
         serializedVersion: 2
-        x: 1704
+        x: 853
         y: 0
-        width: 1604
-        height: 1200
+        width: 800
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: noise_2
       rect:
         serializedVersion: 2
-        x: 3517
+        x: 1760
         y: 0
-        width: 1599
-        height: 1200
+        width: 800
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

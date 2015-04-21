@@ -12,7 +12,7 @@ public class GameOverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         LevelManager.LevelTimerText.GetComponent<Animator>().Play("UIGameOverTime");
-        Instantiate(GameOverScreen);
+		Instantiate(GameOverScreen, new Vector3(Camera.main.transform.position.x,Camera.main.transform.position.y,Camera.main.transform.position.z+26),Camera.main.transform.rotation);
         timer = 2f;
         if (PlayerPrefs.GetFloat("Best time")<LevelManager.TimerLevel) {
             PlayerPrefs.SetFloat("Best time",LevelManager.TimerLevel);

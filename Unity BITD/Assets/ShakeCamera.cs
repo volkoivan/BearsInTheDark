@@ -19,6 +19,7 @@ public class ShakeCamera : MonoBehaviour
         timerToShake = 0f;
         FearLevel = 0;
         cameraStartingPosition = transform.position;
+		NoiseObject.GetComponent<SpriteRenderer> ().color = new Color (0, 0, 0, 0);
 	}
 	
 	// Update is called once per frame

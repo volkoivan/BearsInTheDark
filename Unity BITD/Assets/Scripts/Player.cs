@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
         else cloneBump.transform.position = transform.position - transform.right / 2;
         Vector3 bumpDir = mousePositionForBump - player.transform.position;
         cloneBump.transform.rotation = Quaternion.LookRotation(Vector3.forward, bumpDir);
-        cloneBump.rigidbody2D.AddRelativeForce(new Vector2(0f, 400f));
+        cloneBump.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, 400f));
         Destroy(cloneBump,5f);
     }
 

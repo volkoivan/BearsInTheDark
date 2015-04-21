@@ -112,7 +112,7 @@ public class LevelManager : MonoBehaviour {
                 Instantiate(gameOverObject);
                 isGameOverCreated = true;
                 isGameOver = true;
-                BackgroundMusic.audio.volume = 0.5f;
+                BackgroundMusic.GetComponent<AudioSource>().volume = 0.5f;
                 Instantiate(MusicToPlay[2]);
             }
         }
