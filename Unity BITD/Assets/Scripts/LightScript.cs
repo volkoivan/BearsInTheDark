@@ -30,6 +30,7 @@ public class LightScript : MonoBehaviour {
             {
                 if (obj.name == "LightLevel") LightLevelText = obj;
             }
+            //Check if we are running either in the Unity editor or in a standalone build.
             if (Input.GetMouseButtonDown(1) && timerRecharge<0f) {
                 timerRecharge = 0.7f;
                 var cloneSound = (GameObject) Instantiate(FlashlightSound);

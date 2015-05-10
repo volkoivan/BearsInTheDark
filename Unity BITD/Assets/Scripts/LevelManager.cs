@@ -99,11 +99,11 @@ public class LevelManager : MonoBehaviour {
             if (timerToRestart < 0f) {
                 if (Input.GetMouseButtonDown(0)) {
                     isRestart = true;
-                    Application.LoadLevel("MainScene");
+                    Application.LoadLevel("Test");
                 }
                 if (Input.GetMouseButtonDown(1)) {
                     isRestart = false;
-                    Application.LoadLevel("MainScene");
+					Application.LoadLevel("Test");
                 }
             }
             if (!isGameOverCreated)
